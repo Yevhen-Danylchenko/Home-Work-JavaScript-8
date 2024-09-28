@@ -32,6 +32,10 @@ let numer;
 let denom;
 let num;
 let num1;
+let number;
+let number1;
+let number2;
+let number3;
 
 class Fractions {
     constructor(numerator, denominator, numerator1, denominator1) {
@@ -53,46 +57,47 @@ class Fractions {
                 Nod.push(i);
             }
         }
+    }
 
-        const Nod1 = (...Nod) => {
-            num = Nod.reduce((total, arr) => total * arr, 0)
-        }
-
-        num = Nod1;
-
+    Nod1() {
+        num = Nod.reduce((total, arr) => total * arr, 1);
+        
         num1 = num;
 
         num = num / this.denominator;
         num1 = num1 / this.denominator1;
 
-        this.numerator *= num;
-        this.denominator *= num;
-        this.numerator1 *= num1;
-        this.denominator1 *= num1;
+        number = this.numerator * num;
+        number1 = this.denominator * num;
+        number2 = this.numerator1 * num1;
+        number3 = this.denominator1 * num1;
     }
 
     getSum() {
-        numer = this.numerator + this.numerator1;
-        denom = this.denominator;
-
-        console.log(numer, denom);
+        
+        numer = number + number2;
+        
+        console.log(numer, number1);
     }
 
     getSubstraction(){
-        numer = this.numerator - this.numerator1;
-        denom = this.denominator;
-        console.log(numer, denom);
+        
+        numer = number - number2;
+        
+        console.log(numer, number1);
     }
 
     getMultiplication(){
-        numer = this.numerator * this.numerator1;
-        denom = this.denominator * this.denominator1;
+        
+        numer = number * number2;
+        denom = number1 * number3;
         console.log(numer, denom);
     }
 
     getDivision(){
-        numer = this.numerator * this.denominator1;
-        denom = this.denominator * this.numerator1;
+        
+        numer = number * number3;
+        denom = number1 * number2;
         console.log(numer, denom);
     }
 }
@@ -100,7 +105,11 @@ class Fractions {
 const numb = new Fractions(2,3,1,2);
 
 numb.getNod();
+numb.Nod1();
 numb.getSum();
+numb.getSubstraction();
+numb.getMultiplication();
+numb.getDivision();
 
 
 
